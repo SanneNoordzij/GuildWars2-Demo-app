@@ -1,6 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.App">
+<Application xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:behaviors="clr-namespace:GuildWars2.Utils;assembly=GuildWars2" x:Class="GuildWars2.App">
 	<Application.Resources>
-		<!-- Application resource dictionary -->
+		<ResourceDictionary>
+			<Color x:Key="MainRed">#aa0404</Color>
+			<!--Implicit Styles-->
+			<Style TargetType="ContentPage" ApplyToDerivedTypes="true">
+				<Setter Property="BackgroundColor" Value="#f5f5f5" />
+			</Style>
+			<Style TargetType="NavigationPage">
+				<Setter Property="BarBackgroundColor" Value="{StaticResource MainRed}" />
+				<Setter Property="BarTextColor" Value="White" />
+			</Style>
+			<Style TargetType="Button">
+				<Setter Property="TextColor" Value="White" />
+				<Setter Property="BackgroundColor" Value="{StaticResource MainRed}" />
+			</Style>
+			<!--Explicit Styles-->
+			<Style x:Key="KeyValidationStyle" TargetType="Entry">
+				<Style.Setters>
+					<Setter Property="behaviors:APIKeyValidationBehavior.AttachBehavior" Value="true" />
+				</Style.Setters>
+			</Style>
+		</ResourceDictionary>
 	</Application.Resources>
 </Application>

@@ -132,6 +132,7 @@
     <Compile Include="AppDelegate.cs" />
     <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
     <Compile Include="Effects\iOSShadowEffect.cs" />
+    <Compile Include="CustomRenderers\CustomButtonRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />
