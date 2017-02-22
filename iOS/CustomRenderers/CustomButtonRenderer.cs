@@ -15,7 +15,7 @@ namespace GuildWars2.iOS.CustomRenderers
 
 			if (Control != null)
 			{
-				//Control.SetTitleColor(UIColor.LightGray, UIControlState.Disabled);
+				Control.SetTitleColor(UIColor.LightGray, UIControlState.Disabled);
 			}
 		}
 	}

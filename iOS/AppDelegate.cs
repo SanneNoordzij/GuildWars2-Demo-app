@@ -15,7 +15,8 @@ namespace GuildWars2.iOS
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());
-			//UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
+			UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
+			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
 			return base.FinishedLaunching(app, options);
 		}
 	}

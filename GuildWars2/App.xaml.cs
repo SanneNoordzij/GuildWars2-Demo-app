@@ -3,6 +3,7 @@ using Xamarin.Forms;
 using GuildWars2.Pages;
 using GuildWars2.ViewModels;
 using Xamarin.Forms.Xaml;
+using GuildWars2.Helpers;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GuildWars2
@@ -15,8 +16,12 @@ namespace GuildWars2
 
 			SimpleIoC.RegisterPage<EnterKeyViewModel, EnterKeyPage>();
 			SimpleIoC.RegisterPage<AchievementViewModel, AchievementPage>();
-
-			NavigationService.SetRoot(new EnterKeyViewModel(), false);
+			if (string.IsNullOrEmpty(Settings.ApiKey))
+			{
+				NavigationService.SetRoot(new EnterKeyViewModel());
+				return;
+			}
+			NavigationService.SetRoot(new AchievementViewModel());
 		}
 
 		protected override void OnStart()

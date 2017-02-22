@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns:local="clr-namespace:GuildWars2.CustomViews;assembly=GuildWars2" xmlns:behaviors="clr-namespace:GuildWars2.Utils;assembly=GuildWars2" xmlns:effects="clr-namespace:GuildWars2.Effects;assembly=GuildWars2" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.EnterKeyPage">
 	<ContentPage.Content>
-		<StackLayout>
-			<ContentView BackgroundColor="{StaticResource MainRed}">
-				<ContentView.HeightRequest>
-					<OnPlatform x:TypeArguments="x:Double" iOS="20" Android="0" WinPhone="0" />
-				</ContentView.HeightRequest>
-			</ContentView>
-			<StackLayout Padding="20">
-				<Image Source="logo" HeightRequest="200" />
-				<local:CustomEntry x:Name="apiKeyEntry" Placeholder="Voer API key in" Style="{StaticResource KeyValidationStyle}" BorderColor="{StaticResource MainRed}" IsValid="false">
-					<local:CustomEntry.Effects>
-						<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
-							<effects:ShadowEffect.Color>
-								<OnPlatform x:TypeArguments="Color" iOS="Black" Android="Black" WinPhone="Red" />
-							</effects:ShadowEffect.Color>
-						</effects:ShadowEffect>
-					</local:CustomEntry.Effects>
-				</local:CustomEntry>
-				<Button Text="Login" Command="{Binding GoToNextPage}" IsEnabled="false">
-					<Button.Effects>
-						<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
-							<effects:ShadowEffect.Color>
-								<OnPlatform x:TypeArguments="Color" iOS="Black" Android="White" WinPhone="Red" />
-							</effects:ShadowEffect.Color>
-						</effects:ShadowEffect>
-					</Button.Effects>
-					<Button.Triggers>
-						<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="true">
-							<Setter Property="IsEnabled" Value="true" />
-						</DataTrigger>
-						<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="false">
-							<Setter Property="IsEnabled" Value="false" />
-						</DataTrigger>
-					</Button.Triggers>
-				</Button>
-			</StackLayout>
+		<StackLayout Padding="20">
+			<Image Source="logo" HeightRequest="200" />
+			<local:CustomEntry x:Name="apiKeyEntry" Text="{Binding ApiKey, Mode=TwoWay}" Placeholder="Voer API key in" Style="{StaticResource KeyValidationStyle}" BorderColor="{StaticResource MainRed}" IsValid="false">
+				<local:CustomEntry.Effects>
+					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
+						<effects:ShadowEffect.Color>
+							<OnPlatform x:TypeArguments="Color" iOS="Black" Android="Black" WinPhone="Red" />
+						</effects:ShadowEffect.Color>
+					</effects:ShadowEffect>
+				</local:CustomEntry.Effects>
+			</local:CustomEntry>
+			<Button Text="Scan barcode" Clicked="Handle_Clicked">
+				<Button.Effects>
+					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
+						<effects:ShadowEffect.Color>
+							<OnPlatform x:TypeArguments="Color" iOS="Black" Android="White" WinPhone="Red" />
+						</effects:ShadowEffect.Color>
+					</effects:ShadowEffect>
+				</Button.Effects>
+			</Button>
+			<Button Text="Login" Command="{Binding GoToNextPage}" IsEnabled="false">
+				<Button.Effects>
+					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
+						<effects:ShadowEffect.Color>
+							<OnPlatform x:TypeArguments="Color" iOS="Black" Android="White" WinPhone="Red" />
+						</effects:ShadowEffect.Color>
+					</effects:ShadowEffect>
+				</Button.Effects>
+				<Button.Triggers>
+					<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="true">
+						<Setter Property="IsEnabled" Value="true" />
+					</DataTrigger>
+					<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="false">
+						<Setter Property="IsEnabled" Value="false" />
+					</DataTrigger>
+				</Button.Triggers>
+			</Button>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
