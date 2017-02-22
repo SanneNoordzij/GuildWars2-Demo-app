@@ -2,6 +2,9 @@
 using Xamarin.Forms;
 using GuildWars2.Pages;
 using GuildWars2.ViewModels;
+using Xamarin.Forms.Xaml;
+
+[assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GuildWars2
 {
 	public partial class App : Application
