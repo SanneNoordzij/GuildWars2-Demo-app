@@ -5,7 +5,7 @@ using GuildWars2.iOS.CustomRenderers;
 using UIKit;
 using GuildWars2.CustomViews;
 
-[assembly: ExportRenderer(typeof(CustromEntry), typeof(CustomEntryRenderer))]
+[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
 namespace GuildWars2.iOS.CustomRenderers
 {
 	public class CustomEntryRenderer : EntryRenderer
@@ -16,7 +16,7 @@ namespace GuildWars2.iOS.CustomRenderers
 
 			if (Control != null && e.OldElement == null)
 			{
-				var custromEntry = e.NewElement as CustromEntry;
+				var custromEntry = e.NewElement as CustomEntry;
 				if (custromEntry != null)
 				{
 					Control.Layer.BorderColor = custromEntry.BorderColor.ToCGColor();

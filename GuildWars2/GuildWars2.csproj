@@ -53,8 +53,9 @@
       <DependentUpon>AchievementPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\AchievementViewModel.cs" />
-    <Compile Include="CustomViews\CustromEntry.cs" />
+    <Compile Include="CustomViews\CustomEntry.cs" />
     <Compile Include="Effects\ShadowEffect.cs" />
+    <Compile Include="Utils\APIKeyValidationBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

@@ -5,7 +5,7 @@ using GuildWars2.Droid.CustomRenderers;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 
-[assembly: ExportRenderer(typeof(CustromEntry), typeof(CustomEntryRenderer))]
+[assembly: ExportRenderer(typeof(CustomEntry), typeof(CustomEntryRenderer))]
 namespace GuildWars2.Droid.CustomRenderers
 {
 	public class CustomEntryRenderer : EntryRenderer
@@ -15,7 +15,7 @@ namespace GuildWars2.Droid.CustomRenderers
 			base.OnElementChanged(e);
 			if (Control != null && e.OldElement == null)
 			{
-				var custromEntry = e.NewElement as CustromEntry;
+				var custromEntry = e.NewElement as CustomEntry;
 				if (custromEntry != null)
 				{
 					Control.Background.SetColorFilter(custromEntry.BorderColor.ToAndroid(), PorterDuff.Mode.SrcIn);

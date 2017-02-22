@@ -10,7 +10,7 @@ namespace GuildWars2.ViewModels
 		public ICommand GoToNextPage { get; private set; }
 		public EnterKeyViewModel()
 		{
-			GoToNextPage = new Command(() => { NavigationService.SetRoot(new AchievementViewModel()); });
+			GoToNextPage = new Command(() => { NavigationService.SetRoot(new AchievementViewModel()); }, () => false);
 		}
 	}
 }
