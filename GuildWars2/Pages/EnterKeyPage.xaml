@@ -23,6 +23,14 @@
 						</effects:ShadowEffect.Color>
 					</effects:ShadowEffect>
 				</Button.Effects>
+				<Button.Triggers>
+					<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="true">
+						<Setter Property="IsEnabled" Value="true" />
+					</DataTrigger>
+					<DataTrigger TargetType="Button" Binding="{Binding Source={x:Reference apiKeyEntry}, Path=IsValid}" Value="false">
+						<Setter Property="IsEnabled" Value="false" />
+					</DataTrigger>
+				</Button.Triggers>
 			</Button>
 		</StackLayout>
 	</ContentPage.Content>
