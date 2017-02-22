@@ -117,6 +117,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="CustomRenderers\" />
+    <Folder Include="Effects\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -130,6 +131,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="CustomRenderers\CustomEntryRenderer.cs" />
+    <Compile Include="Effects\iOSShadowEffect.cs" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\logo.png" />

@@ -1,10 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns:local="clr-namespace:GuildWars2.CustomViews;assembly=GuildWars2" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.EnterKeyPage">
+<ContentPage xmlns:local="clr-namespace:GuildWars2.CustomViews;assembly=GuildWars2" xmlns:effects="clr-namespace:GuildWars2.Effects;assembly=GuildWars2" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.EnterKeyPage">
 	<ContentPage.Content>
 		<StackLayout Padding="20">
 			<Image Source="logo" HeightRequest="200" />
-			<local:CustromEntry Placeholder="Voer API key in" BorderColor="#aa0404" />
-			<Button Text="Login" Command="{Binding GoToNextPage}" />
+			<local:CustromEntry Placeholder="Voer API key in" BorderColor="#aa0404">
+				<local:CustromEntry.Effects>
+					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
+						<effects:ShadowEffect.Color>
+							<OnPlatform x:TypeArguments="Color" iOS="Black" Android="Red" WinPhone="Red" />
+						</effects:ShadowEffect.Color>
+					</effects:ShadowEffect>
+				</local:CustromEntry.Effects>
+			</local:CustromEntry>
+			<Button Text="Login" Command="{Binding GoToNextPage}">
+				<Button.Effects>
+					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
+						<effects:ShadowEffect.Color>
+							<OnPlatform x:TypeArguments="Color" iOS="Black" Android="Red" WinPhone="Red" />
+						</effects:ShadowEffect.Color>
+					</effects:ShadowEffect>
+				</Button.Effects>
+			</Button>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
