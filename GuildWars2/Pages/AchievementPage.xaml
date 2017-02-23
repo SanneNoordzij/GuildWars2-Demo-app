@@ -4,5 +4,20 @@
 		<ToolbarItem Text="Logout" Command="{Binding Logout}" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
+		<AbsoluteLayout>
+			<ListView ItemsSource="{Binding Achievements}" HasUnevenRows="false">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+					</DataTemplate>
+				</ListView.ItemTemplate>
+			</ListView>
+			<Frame AbsoluteLayout.LayoutBounds="0.5, 0.5, 130, 100" AbsoluteLayout.LayoutFlags="PositionProportional" IsVisible="{Binding IsBusy}" BackgroundColor="#80000000" Padding="10, 0">
+				<StackLayout Padding="10" HorizontalOptions="Center" VerticalOptions="Center">
+					<ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="True" Color="White" HorizontalOptions="CenterAndExpand" VerticalOptions="Center" Opacity="1" />
+					<Label Text="Verzenden" TextColor="White" HorizontalOptions="Center" />
+				</StackLayout>
+			</Frame>
+		</AbsoluteLayout>
 	</ContentPage.Content>
 </ContentPage>
