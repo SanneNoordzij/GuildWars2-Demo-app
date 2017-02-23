@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.AchievementPage">
+<ContentPage xmlns:local="clr-namespace:GuildWars2.CustomViews;assembly=GuildWars2" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.AchievementPage">
 	<ContentPage.ToolbarItems>
 		<ToolbarItem Text="Logout" Command="{Binding Logout}" />
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<AbsoluteLayout>
-			<ListView ItemsSource="{Binding Achievements}" HasUnevenRows="false">
+			<ListView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" ItemsSource="{Binding Achievements}" HasUnevenRows="true" CachingStrategy="RecycleElement">
 				<ListView.ItemTemplate>
 					<DataTemplate>
-						<TextCell Text="{Binding Name}" Detail="{Binding Description}" />
+						<local:AchievementViewCell Title="{Binding Name}" TitleColor="{StaticResource MainRed}" Description="{Binding Description}" DescriptionColor="Silver" />
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>

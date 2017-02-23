@@ -62,6 +62,7 @@
     <Compile Include="Utils\Constants.cs" />
     <Compile Include="Utils\ObservableRangeCollection.cs" />
     <Compile Include="Models\DetailAchievementModel.cs" />
+    <Compile Include="CustomViews\AchievementViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Settings.Abstractions">
