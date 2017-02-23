@@ -33,6 +33,7 @@ namespace GuildWars2.Droid
 			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscanneractivitylayout = global::GuildWars2.Droid.Resource.Layout.zxingscanneractivitylayout;
 			global::ZXing.Net.Mobile.Forms.Android.Resource.Layout.zxingscannerfragmentlayout = global::GuildWars2.Droid.Resource.Layout.zxingscannerfragmentlayout;
 			global::ZXing.Net.Mobile.Forms.Android.Resource.String.library_name = global::GuildWars2.Droid.Resource.String.library_name;
+			global::Splat.Resource.String.library_name = global::GuildWars2.Droid.Resource.String.library_name;
 		}
 		
 		public partial class Animation

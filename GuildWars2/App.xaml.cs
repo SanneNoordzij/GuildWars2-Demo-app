@@ -4,7 +4,7 @@ using GuildWars2.Pages;
 using GuildWars2.ViewModels;
 using Xamarin.Forms.Xaml;
 using GuildWars2.Helpers;
-
+using Akavache;
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GuildWars2
 {
@@ -17,6 +17,7 @@ namespace GuildWars2
 			SimpleIoC.RegisterPage<EnterKeyViewModel, EnterKeyPage>();
 			SimpleIoC.RegisterPage<AchievementViewModel, AchievementPage>();
 			SimpleIoC.RegisterPage<AchievementDetailViewModel, AchievementDetailPage>();
+			BlobCache.ApplicationName = "Akavache";
 
 			if (string.IsNullOrEmpty(Settings.ApiKey))
 			{
