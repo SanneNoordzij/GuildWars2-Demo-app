@@ -35,6 +35,9 @@
     <EmbeddedResource Include="Pages\AchievementPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Pages\AchievementDetailPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -63,6 +66,10 @@
     <Compile Include="Utils\ObservableRangeCollection.cs" />
     <Compile Include="Models\DetailAchievementModel.cs" />
     <Compile Include="CustomViews\AchievementViewCell.cs" />
+    <Compile Include="Pages\AchievementDetailPage.xaml.cs">
+      <DependentUpon>AchievementDetailPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\AchievementDetailViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Plugin.Settings.Abstractions">

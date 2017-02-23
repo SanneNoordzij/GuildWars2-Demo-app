@@ -13,6 +13,27 @@ namespace GuildWars2.ViewModels
 	public class AchievementViewModel : BaseViewModel
 	{
 		public ObservableRangeCollection<DetailAchievementModel> Achievements { get; set; }
+
+		DetailAchievementModel _SelectedItem;
+		public DetailAchievementModel SelectedItem
+		{
+			get
+			{
+				return _SelectedItem;
+			}
+			set
+			{
+				_SelectedItem = value;
+				OnPropertyChanged("SelectedItem");
+				if (_SelectedItem != null)
+				{
+					GoToDetailPage(_SelectedItem);
+					_SelectedItem = null;
+					OnPropertyChanged("SelectedItem");
+				}
+
+			}
+		}
 		public ICommand Logout { get; private set; }
 
 		public AchievementViewModel()
@@ -24,6 +45,11 @@ namespace GuildWars2.ViewModels
 				NavigationService.SetRoot(new EnterKeyViewModel());
 			});
 			RetrieveAchievements();
+		}
+
+		async void GoToDetailPage(DetailAchievementModel model)
+		{
+			await NavigationService.PushAsync(new AchievementDetailViewModel(model));
 		}
 
 		async void RetrieveAchievements()

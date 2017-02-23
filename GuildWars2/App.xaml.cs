@@ -16,6 +16,8 @@ namespace GuildWars2
 
 			SimpleIoC.RegisterPage<EnterKeyViewModel, EnterKeyPage>();
 			SimpleIoC.RegisterPage<AchievementViewModel, AchievementPage>();
+			SimpleIoC.RegisterPage<AchievementDetailViewModel, AchievementDetailPage>();
+
 			if (string.IsNullOrEmpty(Settings.ApiKey))
 			{
 				NavigationService.SetRoot(new EnterKeyViewModel());

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="GuildWars2.Pages.AchievementDetailPage">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout Padding="20">
+				<Label Text="Title" TextColor="{StaticResource MainRed}" />
+				<Label Text="{Binding Model.Name}" />
+				<Label Text="Description" TextColor="{StaticResource MainRed}" />
+				<Label Text="{Binding Model.Description}" />
+				<Label Text="Requirement" TextColor="{StaticResource MainRed}" />
+				<Label Text="{Binding Model.Requirement}" />
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

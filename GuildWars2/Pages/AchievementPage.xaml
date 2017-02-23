@@ -5,7 +5,7 @@
 	</ContentPage.ToolbarItems>
 	<ContentPage.Content>
 		<AbsoluteLayout>
-			<ListView AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" ItemsSource="{Binding Achievements}" HasUnevenRows="true" CachingStrategy="RecycleElement">
+			<ListView SelectedItem="{Binding SelectedItem, Mode=TwoWay}" AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" ItemsSource="{Binding Achievements}" HasUnevenRows="true" CachingStrategy="RecycleElement">
 				<ListView.ItemTemplate>
 					<DataTemplate>
 						<local:AchievementViewCell Title="{Binding Name}" TitleColor="{StaticResource MainRed}" Description="{Binding Description}" DescriptionColor="Silver" />
