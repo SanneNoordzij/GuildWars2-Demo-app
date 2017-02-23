@@ -3,7 +3,7 @@
 	<ContentPage.Content>
 		<StackLayout Padding="20">
 			<Image Source="logo" HeightRequest="200" />
-			<local:CustomEntry x:Name="apiKeyEntry" Text="{Binding ApiKey, Mode=TwoWay}" Placeholder="Voer API key in" Style="{StaticResource KeyValidationStyle}" BorderColor="{StaticResource MainRed}" IsValid="false">
+			<local:CustomEntry AutomationId="apiKeyEntry" x:Name="apiKeyEntry" Text="{Binding ApiKey, Mode=TwoWay}" Placeholder="Voer API key in" Style="{StaticResource KeyValidationStyle}" BorderColor="{StaticResource MainRed}" IsValid="false">
 				<local:CustomEntry.Effects>
 					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
 						<effects:ShadowEffect.Color>
@@ -12,7 +12,7 @@
 					</effects:ShadowEffect>
 				</local:CustomEntry.Effects>
 			</local:CustomEntry>
-			<Button Text="Scan barcode" Clicked="Handle_Clicked">
+			<Button AutomationId="barcodebutton" Text="Scan barcode" Clicked="Handle_Clicked">
 				<Button.Effects>
 					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
 						<effects:ShadowEffect.Color>
@@ -21,7 +21,7 @@
 					</effects:ShadowEffect>
 				</Button.Effects>
 			</Button>
-			<Button Text="Login" Command="{Binding GoToNextPage}" IsEnabled="false">
+			<Button AutomationId="loginbutton" Text="Login" Command="{Binding GoToNextPage}" IsEnabled="false">
 				<Button.Effects>
 					<effects:ShadowEffect Radius="5" DistanceX="5" DistanceY="5">
 						<effects:ShadowEffect.Color>

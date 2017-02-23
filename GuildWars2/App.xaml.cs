@@ -5,6 +5,7 @@ using GuildWars2.ViewModels;
 using Xamarin.Forms.Xaml;
 using GuildWars2.Helpers;
 using Akavache;
+
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace GuildWars2
 {

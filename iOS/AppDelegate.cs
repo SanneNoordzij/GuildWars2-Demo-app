@@ -12,11 +12,14 @@ namespace GuildWars2.iOS
 	{
 		public override bool FinishedLaunching(UIApplication app, NSDictionary options)
 		{
+			Xamarin.Calabash.Start();
+
 			global::Xamarin.Forms.Forms.Init();
 
 			LoadApplication(new App());
 			UIApplication.SharedApplication.StatusBarStyle = UIStatusBarStyle.LightContent;
 			ZXing.Net.Mobile.Forms.iOS.Platform.Init();
+
 			return base.FinishedLaunching(app, options);
 		}
 	}
